@@ -1,77 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <style>
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #333;
-        }
-       
         body {
             background-image: url("background.png");
             margin: 20px;
             padding: 0;
-            color:white;
+            color: white;
+            overflow-x: hidden;
         }
 
         a.link {
             color: white;
             text-decoration: underline;
             font-weight: bold;
-            margin: 20px;
             font-size: x-large;
         }
 
         footer {
-            position:absolute;
-            width:100%;
-            bottom:0px;
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
             text-align: center;
             font-size: large;
         }
     </style>
 </head>
+
 <body>
-    <div style="display: flex; width: 100vw; justify-content: center">
-        <a href="/kezdolap.html">
+    <div style="display: flex; justify-content: center">
+        <a href="index.html">
             <img src="uni.png" alt="This should not be here">
         </a>
     </div>
 
-    <div style="display: flex; width: 100vw; justify-content: space-between">
-        <a class="link" href="/link1">Adatbázisrendszerek</a>
-        <a class="link" href="/link1">HTML 5 nyelv alapjai</a>
-        <a class="link" href="/link1">Prezentáció készítés</a>
+    <div style="display: flex; margin: 30px 70px 70px 50px; justify-content: center; gap:20%">
+        <a class="link" href="adatbazis.html">Adatbázisrendszerek</a>
+        <a class="link" href="html5.html">HTML 5 nyelv alapjai</a>
+        <a class="link" href="prezentacio.html">Prezentáció készítés</a>
     </div>
 
-    <main>
+    <main style="margin-left: 30px;">
         <h3>Üdvözlöm a honlapomon!</h3>
         <div style="margin-bottom: 50px;">
             Ezt a kis weblapot az XML kurzuson készítettem el
         </div>
         <div>
-          <b>Forrás:</b><br>
-          Farkas Csaba - Fodor Gábor Antal: Windows 10 és Office 2016 középfokon.
-          Budapest: Jedlik Oktatási Stúdió, 2016.
-      </div>
+            <b>Forrás:</b><br>
+            Farkas Csaba - Fodor Gábor Antal: Windows 10 és Office 2016 középfokon.
+            Budapest: Jedlik Oktatási Stúdió, 2016.
+        </div>
     </main>
 
     <footer>
         <p>Holczer Vanda | C0LLER | 2023</p>
     </footer>
 </body>
+
 </html>
