@@ -1,0 +1,9 @@
+<!ELEMENT mozi (film*)>
+<!ELEMENT film (rendezo+,szinesz+,iro+)>
+<!ATTLIST film id CDATA #REQUIRED mufaj (akcio|vigjatek|thriller))>
+<!ELEMENT rendezo EMPTY>
+<!ATTLIST rendezo id CDATA #REQUIRED nev CDATA #REQUIRED>
+<!ELEMENT szinesz EMPTY>
+<!ATTLIST szinesz id CDATA #REQUIRED nev CDATA #REQUIRED>
+<!ELEMENT iro EMPTY>
+<!ATTLIST iro id CDATA #REQUIRED>
