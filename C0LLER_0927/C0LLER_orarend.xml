@@ -1,0 +1,112 @@
+<C0LLER_orarend>
+        <ora id="1" tipus="elmelet">
+            <targy>WEB technológiák 1</targy>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>XXX A1 III. em. 305</helyszin>
+            <oktato>Agárdi Anita</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="2" tipus="gyakorlat">
+            <targy>WEB technológiák 1</targy>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>16:00</tol>
+                <ig>18:00</ig>
+            </idopont>
+            <helyszin>In/202 In II. em. 202</helyszin>
+            <oktato>Agárdi Anita</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="3" tipus="elmelet">
+            <targy>Mesterséges intelligencia alapok</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>10:00</tol>
+                <ig>12:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Kunné Dr. Tamás Judit</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="4" tipus="elmelet">
+            <targy>Adatkezelés XML-ben</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>12:00</tol>
+                <ig>14:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Dr. Bednarik László</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="5" tipus="elmelet">
+            <targy>Algoritmusok és vizsgálatuk</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>A1/320 A1 III. em. 320</helyszin>
+            <oktato>Dr. Házy Attila</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="6" tipus="gyakorlat">
+            <targy>Algoritmusok és vizsgálatuk</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>16:00</tol>
+                <ig>18:00</ig>
+            </idopont>
+            <helyszin>A1/320 A1 III. em. 320</helyszin>
+            <oktato>Dr. Házy Attila</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="7" tipus="gyakorlat">
+            <targy>Adatkezelés XML-ben</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>12:00</tol>
+                <ig>14:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Dr. Bednarik László</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="8" tipus="elmelet">
+            <targy>Vállalati információs rendszerek fejlesztése</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>In/101 In I. e. 101</helyszin>
+            <oktato>Dr. Sasvári Péter</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="9" tipus="gyakorlat">
+            <targy>Vállalati információs rendszerek fejlesztése</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>18:00</tol>
+                <ig>20:00</ig>
+            </idopont>
+            <helyszin>In/103 In I. e. 103</helyszin>
+            <oktato>Dr. Sasvári Péter</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="10" tipus="gyakorlat">
+            <targy>Mesterséges intelligencia alapok</targy>
+            <idopont>
+                <nap>Csütörtök</nap>
+                <tol>10:00</tol>
+                <ig>12:00</ig>
+            </idopont>
+            <helyszin>I A2 fsz.</helyszin>
+            <oktato>Fazekas Levente</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+</C0LLER_orarend>

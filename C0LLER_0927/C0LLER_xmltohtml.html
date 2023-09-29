@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Órarend</h1>
+
+    <table>
+        <tr>
+            <th>Hétfő</th>
+            <th>Kedd</th>
+            <th>Szerda</th>
+            <th>Csütörtök</th>
+        </tr>
+
+        <script>
+            const xmlString = `<C0LLER_orarend>
+        <ora id="1" tipus="elmelet">
+            <targy>WEB technológiák 1</targy>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>XXX A1 III. em. 305</helyszin>
+            <oktato>Agárdi Anita</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="2" tipus="gyakorlat">
+            <targy>WEB technológiák 1</targy>
+            <idopont>
+                <nap>Hétfő</nap>
+                <tol>16:00</tol>
+                <ig>18:00</ig>
+            </idopont>
+            <helyszin>In/202 In II. em. 202</helyszin>
+            <oktato>Agárdi Anita</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="3" tipus="elmelet">
+            <targy>Mesterséges intelligencia alapok</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>10:00</tol>
+                <ig>12:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Kunné Dr. Tamás Judit</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="4" tipus="elmelet">
+            <targy>Adatkezelés XML-ben</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>12:00</tol>
+                <ig>14:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Dr. Bednarik László</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="5" tipus="elmelet">
+            <targy>Algoritmusok és vizsgálatuk</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>A1/320 A1 III. em. 320</helyszin>
+            <oktato>Dr. Házy Attila</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="6" tipus="gyakorlat">
+            <targy>Algoritmusok és vizsgálatuk</targy>
+            <idopont>
+                <nap>Kedd</nap>
+                <tol>16:00</tol>
+                <ig>18:00</ig>
+            </idopont>
+            <helyszin>A1/320 A1 III. em. 320</helyszin>
+            <oktato>Dr. Házy Attila</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="7" tipus="gyakorlat">
+            <targy>Adatkezelés XML-ben</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>12:00</tol>
+                <ig>14:00</ig>
+            </idopont>
+            <helyszin>XXXII A1 magasfsz</helyszin>
+            <oktato>Dr. Bednarik László</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="8" tipus="elmelet">
+            <targy>Vállalati információs rendszerek fejlesztése</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>14:00</tol>
+                <ig>16:00</ig>
+            </idopont>
+            <helyszin>In/101 In I. e. 101</helyszin>
+            <oktato>Dr. Sasvári Péter</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="9" tipus="gyakorlat">
+            <targy>Vállalati információs rendszerek fejlesztése</targy>
+            <idopont>
+                <nap>Szerda</nap>
+                <tol>18:00</tol>
+                <ig>20:00</ig>
+            </idopont>
+            <helyszin>In/103 In I. e. 103</helyszin>
+            <oktato>Dr. Sasvári Péter</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+        <ora id="10" tipus="gyakorlat">
+            <targy>Mesterséges intelligencia alapok</targy>
+            <idopont>
+                <nap>Csütörtök</nap>
+                <tol>10:00</tol>
+                <ig>12:00</ig>
+            </idopont>
+            <helyszin>I A2 fsz.</helyszin>
+            <oktato>Fazekas Levente</oktato>
+            <szak>Programtervező informatikus</szak>
+        </ora>
+</C0LLER_orarend>`;
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, "text/xml");
+            const oraElements = xmlDoc.getElementsByTagName("ora");
+
+            const schedule = {
+                "Hétfő": [],
+                "Kedd": [],
+                "Szerda": [],
+                "Csütörtök": [],
+            };
+
+            for (let i = 0; i < oraElements.length; i++) {
+                const ora = oraElements[i];
+                const day = ora.querySelector("nap").textContent;
+                const timeFrom = ora.querySelector("tol").textContent;
+                const timeTo = ora.querySelector("ig").textContent;
+                const subject = ora.querySelector("targy").textContent;
+                const location = ora.querySelector("helyszin").textContent;
+                const instructor = ora.querySelector("oktato").textContent;
+
+                const entry = `${subject}<br>${timeFrom} - ${timeTo}<br>${location}<br>${instructor}`;
+
+                if (schedule.hasOwnProperty(day)) {
+                    schedule[day].push(entry);
+                }
+            }
+
+            const days = ["Hétfő", "Kedd", "Szerda", "Csütörtök"];
+            let maxRows = 0;
+
+            // Find the maximum number of rows for any day
+            for (let i = 0; i < days.length; i++) {
+                const day = days[i];
+                maxRows = Math.max(maxRows, schedule[day].length);
+            }
+
+            // Create rows for the schedule entries
+            for (let rowNumber = 0; rowNumber < maxRows; rowNumber++) {
+                const row = document.createElement("tr");
+
+                for (let i = 0; i < days.length; i++) {
+                    const day = days[i];
+                    const cell = document.createElement("td");
+
+                    if (rowNumber < schedule[day].length) {
+                        cell.innerHTML = schedule[day][rowNumber];
+                    }
+
+                    row.appendChild(cell);
+                }
+
+                document.querySelector("table").appendChild(row);
+            }
+        </script>
+    </table>
+
+</body>
+
+</html>
