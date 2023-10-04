@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<schema xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema">
+  <element name="C0LLER_orarend">
+    <complexType>
+      <sequence>
+        <element maxOccurs="unbounded" name="ora">
+          <complexType>
+            <sequence>
+              <element name="targy" type="string" />
+              <element name="idopont">
+                <complexType>
+                  <sequence>
+                    <element name="nap" type="string" />
+                    <element name="tol" type="string" />
+                    <element name="ig" type="string" />
+                  </sequence>
+                </complexType>
+              </element>
+              <element name="helyszin" type="string" />
+              <element name="oktato" type="string" />
+              <element name="szak" type="string" />
+            </sequence>
+            <attribute name="id" type="unsignedByte" use="required" />
+            <attribute name="tipus" type="string" use="required" />
+          </complexType>
+        </element>
+      </sequence>
+    </complexType>
+  </element>
+</schema>
