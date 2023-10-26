@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:element name="hnev" type="xs:string"/>
+  <xs:element name="szulev" type="xs:unsignedInt"/>
+
+  <xs:attribute name="evf" type="xs:unsignedInt"/>
+
+  <xs:element name="kurzusnev" type="xs:string" />
+  <xs:element name="kredit" type="xs:unsignedInt" />
+  <xs:element name="hely" type="xs:string" />
+  <xs:element name="idopont" type="xs:string" />
+  <xs:element name="oktato" type="xs:string" />
+  <xs:element name="oraado" type="xs:string" />
+
+  <xs:attribute name="id" type="xs:string"/>
+
+  <xs:attribute name="tanev" type="xs:unsignedInt" />
+  <xs:attribute name="egyetem" type="xs:string" />
+
+  <xs:element name="C0LLER_kurzusfelvetel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="hallgato">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="hnev"/>
+              <xs:element ref="szulev"/>
+              <xs:element name="szak">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute ref="evf" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="kurzusok">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="kurzus">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="kurzusnev"/>
+                    <xs:element ref="kredit"/>
+                    <xs:element ref="hely"/>
+                    <xs:element ref="idopont"/>
+                    <xs:element ref="oktato" minOccurs="1" maxOccurs="1" />
+                    <xs:element ref="oraado" minOccurs="0" maxOccurs="1" />
+                  </xs:sequence>
+                  <xs:attribute ref="id" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute ref="tanev" use="required" />
+      <xs:attribute ref="egyetem" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
