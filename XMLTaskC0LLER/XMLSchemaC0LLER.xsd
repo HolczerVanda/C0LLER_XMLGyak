@@ -180,37 +180,37 @@
 
         <xs:keyref name="business_card_librarian_key" refer="librarian_key">
             <xs:selector xpath="business_card" />
-            <xs:field xpath="@librarian" />
+            <xs:field xpath="@librarian_id" />
         </xs:keyref>
 
         <xs:keyref name="handing_over_librarian_key" refer="librarian_key">
             <xs:selector xpath="handing_over" />
-            <xs:field xpath="@librarian" />
+            <xs:field xpath="@librarian_id" />
         </xs:keyref>
 
         <xs:keyref name="handing_over_borrower_key" refer="borrower_key">
             <xs:selector xpath="handing_over" />
-            <xs:field xpath="@borrower" />
+            <xs:field xpath="@borrower_id" />
         </xs:keyref>
 
         <xs:keyref name="borrowed_by_borrower_key" refer="borrower_key">
             <xs:selector xpath="borrowed_by" />
-            <xs:field xpath="@borrower" />
+            <xs:field xpath="@borrower_id" />
         </xs:keyref>
 
         <xs:keyref name="borrowed_by_book_key" refer="book_key">
             <xs:selector xpath="borrowed_by" />
-            <xs:field xpath="@book" />
+            <xs:field xpath="@book_id" />
         </xs:keyref>
 
         <xs:keyref name="written_by_book_key" refer="book_key">
             <xs:selector xpath="written_by" />
-            <xs:field xpath="@book" />
+            <xs:field xpath="@book_id" />
         </xs:keyref>
 
         <xs:keyref name="written_by_author_key" refer="author_key">
             <xs:selector xpath="written_by" />
-            <xs:field xpath="@author" />
+            <xs:field xpath="@author_id" />
         </xs:keyref>
 
         <!-- 1:1 connection -->
