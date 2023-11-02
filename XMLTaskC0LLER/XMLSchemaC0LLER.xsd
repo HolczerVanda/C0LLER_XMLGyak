@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+    <!-- Collection of simple types and restrections -->
+
+    <xs:element name="date_of_birth" type="xs:date" />
+    <xs:element name="age" type="xs:positiveInteger" />
+    <xs:element name="phone_number" type="phone_number_type" />
+    <xs:element name="email_address" type="email_address_type" />
+    <xs:element name="written_name" type="xs:string" />
+    <xs:element name="date" type="xs:date" />
+    <xs:element name="lending_or_taking" type="xs:boolean" />
+    <xs:element name="title" type="xs:string" />
+    <xs:element name="borrowable" type="xs:boolean" />
+    <xs:element name="late_fee" type="xs:integer" />
+    <xs:element name="deadline" type="xs:date" />
+    <xs:element name="publication_date" type="xs:date" />
+    <xs:element name="handing_date" type="xs:date"></xs:element>
+
+    <xs:simpleType name="phone_number_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\d{4}-\d{3}-\d{4}" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="email_address_type">
+        <xs:restriction base="xs:string">
+            <xs:pattern
+                value="([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- Complex type and own type definitions -->
+
+
+    <xs:complexType name="address_type">
+        <xs:sequence>
+            <xs:element name="city" type="xs:string" />
+            <xs:element name="street" type="xs:string" />
+            <xs:element name="house_number" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="name_type">
+        <xs:sequence>
+            <xs:element name="first_name" type="xs:string" />
+            <xs:element name="last_name" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="librarian_type">
+        <xs:sequence>
+            <xs:element name="name" type="name_type" />
+            <xs:element ref="date_of_birth" />
+            <xs:element ref="age" />
+            <xs:element ref="phone_number" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="librarian_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="business_card_type">
+        <xs:sequence>
+            <xs:element ref="written_name" />
+        </xs:sequence>
+        <xs:attribute name="card_id" type="xs:integer" use="required" />
+        <xs:attribute name="librarian_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="borrower_type">
+        <xs:sequence>
+            <xs:element name="name" type="name_type" />
+            <xs:element ref="date_of_birth" />
+            <xs:element ref="age" />
+            <xs:element name="address" type="address_type" minOccurs="0" />
+            <xs:element ref="phone_number" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element ref="email_address" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="borrower_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="handing_over_type">
+        <xs:sequence>
+            <xs:element ref="handing_date" minOccurs="0" />
+            <xs:element ref="lending_or_taking" />
+        </xs:sequence>
+        <xs:attribute name="book_id" type="xs:integer" use="required" />
+        <xs:attribute name="librarian_id" type="xs:integer" use="required" />
+        <xs:attribute name="borrower_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="book_type">
+        <xs:sequence>
+            <xs:element ref="title" />
+            <xs:element ref="borrowable" />
+        </xs:sequence>
+        <xs:attribute name="book_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="borrowed_by_type">
+        <xs:sequence>
+            <xs:element ref="late_fee" />
+            <xs:element ref="deadline" />
+        </xs:sequence>
+        <xs:attribute name="book_id" type="xs:integer" use="required" />
+        <xs:attribute name="borrower_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="author_type">
+        <xs:sequence>
+            <xs:element name="name" type="name_type" />
+            <xs:element ref="date_of_birth" />
+            <xs:element ref="age" />
+        </xs:sequence>
+        <xs:attribute name="author_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <xs:complexType name="written_by_type">
+        <xs:sequence>
+            <xs:element ref="publication_date" />
+        </xs:sequence>
+        <xs:attribute name="book_id" type="xs:integer" use="required" />
+        <xs:attribute name="author_id" type="xs:integer" use="required" />
+    </xs:complexType>
+
+    <!-- Gyökérelemtől az elemek felhasználása -->
+
+    <xs:element name="C0LLER_Library">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="librarian" type="librarian_type" minOccurs="3"
+                    maxOccurs="unbounded" />
+                <xs:element name="business_card" type="business_card_type" minOccurs="3"
+                    maxOccurs="unbounded" />
+                <xs:element name="borrower" type="borrower_type" minOccurs="3" maxOccurs="unbounded" />
+                <xs:element name="handing_over" type="handing_over_type" minOccurs="3"
+                    maxOccurs="unbounded" />
+                <xs:element name="book" type="book_type" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="borrowed_by" type="borrowed_by_type" minOccurs="0"
+                    maxOccurs="unbounded" />
+                <xs:element name="author" type="author_type" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element name="written_by" type="written_by_type" minOccurs="0"
+                    maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+
+        <!-- Unique keys -->
+
+        <xs:key name="business_card_key">
+            <xs:selector xpath="business_card" />
+            <xs:field xpath="@card_id" />
+        </xs:key>
+
+        <xs:key name="librarian_key">
+            <xs:selector xpath="librarian" />
+            <xs:field xpath="@librarian_id" />
+        </xs:key>
+
+        <xs:key name="handing_over_key">
+            <xs:selector xpath="handing_over" />
+            <xs:field xpath="@book_id" />
+        </xs:key>
+
+        <xs:key name="borrower_key">
+            <xs:selector xpath="borrower" />
+            <xs:field xpath="@borrower_id" />
+        </xs:key>
+
+        <xs:key name="book_key">
+            <xs:selector xpath="book" />
+            <xs:field xpath="@book_id" />
+        </xs:key>
+
+        <xs:key name="author_key">
+            <xs:selector xpath="author" />
+            <xs:field xpath="@author_id" />
+        </xs:key>
+
+        <!-- Foreign keys -->
+
+        <xs:keyref name="business_card_librarian_key" refer="librarian_key">
+            <xs:selector xpath="business_card" />
+            <xs:field xpath="@librarian" />
+        </xs:keyref>
+
+        <xs:keyref name="handing_over_librarian_key" refer="librarian_key">
+            <xs:selector xpath="handing_over" />
+            <xs:field xpath="@librarian" />
+        </xs:keyref>
+
+        <xs:keyref name="handing_over_borrower_key" refer="borrower_key">
+            <xs:selector xpath="handing_over" />
+            <xs:field xpath="@borrower" />
+        </xs:keyref>
+
+        <xs:keyref name="borrowed_by_borrower_key" refer="borrower_key">
+            <xs:selector xpath="borrowed_by" />
+            <xs:field xpath="@borrower" />
+        </xs:keyref>
+
+        <xs:keyref name="borrowed_by_book_key" refer="book_key">
+            <xs:selector xpath="borrowed_by" />
+            <xs:field xpath="@book" />
+        </xs:keyref>
+
+        <xs:keyref name="written_by_book_key" refer="book_key">
+            <xs:selector xpath="written_by" />
+            <xs:field xpath="@book" />
+        </xs:keyref>
+
+        <xs:keyref name="written_by_author_key" refer="author_key">
+            <xs:selector xpath="written_by" />
+            <xs:field xpath="@author" />
+        </xs:keyref>
+
+        <!-- 1:1 connection -->
+        <xs:unique name="business_card_librarian_oneone">
+            <xs:selector xpath="business_card" />
+            <xs:field xpath="@librarian_id" />
+        </xs:unique>
+
+    </xs:element>
+
+</xs:schema>
