@@ -1,0 +1,8 @@
+hallgato: 
+        Holczer Vanda
+        2003
+        
+    
+  hnev: Holczer Vanda
+  szulev: 2003
+  szak: 
