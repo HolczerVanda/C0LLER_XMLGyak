@@ -123,7 +123,7 @@
         <xs:attribute name="author_id" type="xs:integer" use="required" />
     </xs:complexType>
 
-    <!-- Gyökérelemtől az elemek felhasználása -->
+    <!-- Use of the elements from the root element -->
 
     <xs:element name="C0LLER_Library">
         <xs:complexType>
