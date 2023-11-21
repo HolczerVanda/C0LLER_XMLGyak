@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<C0LLER_kurzusfelvetel tanev="3" egyetem="ME">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><C0LLER_kurzusfelvetel egyetem="ME" tanev="3">
     <hallgato>
         <hnev>Holczer Vanda</hnev>
         <szulev>2003</szulev>
         <szak evf="3">Programtervező informatika</szak>
     </hallgato>
     <kurzusok>
-        <kurzus id="GEIAL331-B" nyelv="angol">
+        <kurzus id="GEIAL331-B" nyelv="német">
             <kurzusnev>Web technológiák 1</kurzusnev>
             <kredit>5</kredit>
             <hely>XXX A1 III. em. 305</hely>
             <idopont>Hétfő 14:00-16:00</idopont>
             <oktato>Agárdi Anita</oktato>
-        </kurzus>
+        <oraado>Varga Lajos</oraado></kurzus>
         <kurzus id="GEIAK130-B">
             <kurzusnev>Mesterséges Intelligencia Alapjai</kurzusnev>
             <kredit>5</kredit>
@@ -25,10 +23,10 @@
         <kurzus id="GEIAL332-B">
             <kurzusnev>Adatkezelés XML-ben</kurzusnev>
             <kredit>5</kredit>
-            <hely>XXXII A1 magasfsz</hely>
-            <idopont>Kedd 12:00-14:00</idopont>
+            <hely>In/101 In I. e. 101</hely>
+            <idopont>Szerda 12:00-14:00</idopont>
             <oktato>Dr. Bednarik László</oktato>
-        </kurzus>
+        <oraado>Szabó Nóra</oraado></kurzus>
         <kurzus id="GEMAK234-B" nyelv="francia">
             <kurzusnev>Algoritmusok és vizsgálatuk</kurzusnev>
             <kredit>5</kredit>
