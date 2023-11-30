@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<C0LLER_Library xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="XMLSchemaC0LLER.xsd">
+
+  <librarian librarian_id="01">
+    <name >
+      <first_name >Klaudia</first_name>
+      <last_name >Fehér</last_name>
+    </name>
+    <date_of_birth >2000-05-17</date_of_birth>
+    <age >23</age>
+    <phone_number >0630-080-8126</phone_number>
+    <phone_number >0620-871-4015</phone_number>
+  </librarian>
+
+  <librarian librarian_id="02">
+    <name >
+      <first_name >Albert</first_name>
+      <last_name >Pintér</last_name>
+    </name>
+    <date_of_birth >1988-12-17</date_of_birth>
+    <age >35</age>
+    <phone_number >0620-155-0102</phone_number>
+  </librarian>
+
+  <librarian librarian_id="03">
+    <name >
+      <first_name >Erzsébet</first_name>
+      <last_name >Farkas</last_name>
+    </name>
+    <date_of_birth >1966-03-12</date_of_birth>
+    <age >57</age>
+    <phone_number >0670-440-8020</phone_number>
+  </librarian>
+
+
+  <business_card card_id="11" librarian_id="01">
+    <written_name >Fehér Klaudia</written_name>
+  </business_card>
+
+  <business_card card_id="12" librarian_id="02">
+    <written_name >Pintér Albert</written_name>
+  </business_card>
+
+  <business_card card_id="13" librarian_id="03">
+    <written_name >Farkas Erzsébet</written_name>
+  </business_card>
+
+
+  <borrower borrower_id="21">
+    <name >
+      <first_name >Árpád</first_name>
+      <last_name >Jakab</last_name>
+    </name>
+    <date_of_birth >1965-01-12</date_of_birth>
+    <age >58</age>
+    <address >
+      <city >Miskolc</city>
+      <street >Vitéz utca</street>
+      <house_number >31</house_number>
+    </address>
+    <phone_number >0630-651-4518</phone_number>
+    <phone_number >0670-749-3819</phone_number>
+  </borrower>
+
+  <borrower borrower_id="22">
+    <name >
+      <first_name >Georgina</first_name>
+      <last_name >Somogyi</last_name>
+    </name>
+    <date_of_birth >1972-10-24</date_of_birth>
+    <age >51</age>
+    <address >
+      <city >Arnót</city>
+      <street >Kisfaludy utca</street>
+      <house_number >17</house_number>
+    </address>
+    <phone_number >0620-845-4708</phone_number>
+    <email_address >somogyigeorgina@citromail.hu</email_address>
+  </borrower>
+
+  <borrower borrower_id="23">
+    <name >
+      <first_name >Maja</first_name>
+      <last_name >Rácz</last_name>
+    </name>
+    <date_of_birth >2000-11-28</date_of_birth>
+    <age >23</age>
+    <email_address >rmaja@freemail.hu</email_address>
+  </borrower>
+
+
+  <handing_over book_id="32" borrower_id="21" librarian_id="02">
+    <lending_or_taking >1</lending_or_taking>
+    <handing_date >null</handing_date>
+  </handing_over>
+
+  <handing_over book_id="31" borrower_id="22" librarian_id="03">
+    <lending_or_taking >1</lending_or_taking>
+    <handing_date >2023-08-23</handing_date>
+  </handing_over>
+
+  <handing_over book_id="33" borrower_id="23" librarian_id="01">
+    <lending_or_taking >0</lending_or_taking>
+    <handing_date >2022-12-16</handing_date>
+  </handing_over>
+
+
+  <book book_id="31">
+    <title >Harry Potter és a Bölcsek Köve</title>
+    <borrowable >1</borrowable>
+  </book>
+
+  <book book_id="32">
+    <title >Ahol a folyami rákok énekelnek</title>
+    <borrowable >1</borrowable>
+  </book>
+
+  <book book_id="33">
+    <title >Fordulópont</title>
+    <borrowable >1</borrowable>
+  </book>
+
+
+  <borrowed_by book_id="32" borrower_id="21">
+    <late_fee >0</late_fee>
+    <deadline >2023-03-17</deadline>
+  </borrowed_by>
+
+  <borrowed_by book_id="31" borrower_id="22">
+    <late_fee >0</late_fee>
+    <deadline >2023-09-01</deadline>
+  </borrowed_by>
+
+  <borrowed_by book_id="33" borrower_id="23">
+    <late_fee >800</late_fee>
+    <deadline >2023-02-16</deadline>
+  </borrowed_by>
+
+
+  <author author_id="41">
+    <name >
+      <first_name >Joanne</first_name>
+      <last_name >Rowling</last_name>
+    </name>
+    <date_of_birth >1965-07-31</date_of_birth>
+    <age >58</age>
+  </author>
+
+  <author author_id="42">
+    <name >
+      <first_name >Delia</first_name>
+      <last_name >Owens</last_name>
+    </name>
+    <date_of_birth >1949-04-04</date_of_birth>
+    <age >74</age>
+  </author>
+
+  <author author_id="43">
+    <name >
+      <first_name >Danielle</first_name>
+      <last_name >Steel</last_name>
+    </name>
+    <date_of_birth >1947-08-14</date_of_birth>
+    <age >76</age>
+  </author>
+
+
+  <written_by author_id="41" book_id="31">
+    <publication_date >2001-12-13</publication_date>
+  </written_by>
+
+  <written_by author_id="42" book_id="32">
+    <publication_date >2018-08-14</publication_date>
+  </written_by>
+
+  <written_by author_id="43" book_id="33">
+    <publication_date >2019-07-21</publication_date>
+  </written_by>
+
+
+</C0LLER_Library>
